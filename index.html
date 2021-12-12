@@ -24,15 +24,17 @@
             </div>
             <div id="second" class="col">
                 <div class="container">
-                    <ul>
-                        <li>Home</li>
-                        <li>About Us</li>
-                        <li>How Does It Work?</li>
-                    </ul>
+                    <div class="menu">
+                        <div>Home</div> 
+                       <div>About Us</div> 
+                        <div>How Does It Work?</div> 
+                    </div>
+                    <div id='main-content'>
                     <h2>Movie Recommender</h2>
                     <h3>How do we choose the best movie, you ask? Well it is easy we first do content based filtering
                         and
                         then AHP</h3>
+                    </div>
                     <button class='button-down'>Find My Best Movie</button>
                 </div>
             </div>
@@ -67,36 +69,39 @@
                 <div id="range-col" class="col-8">
                     <h2>Which is more important?</h2>
                     <h3>Which aspects should be closer to the movies you choose?</h3>
-
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-1">
-                                <h5>IMDB</h5>
+                    <div class="ranges">
+                            <div class="range">
+                            <h5 id='IMDB1'>IMDB</h5>
+                            <span class='picker1' id='-5'><H6 class="text-center">MAX</H6></span>
+                            <span class='picker1' id='-4'></span>
+                            <span class='picker1' id='-3'></span>
+                            <span class='picker1' id='-2'></span>
+                            <span class='picker1' id='-1'></span>
+                            <span class='picker1' id='0' style="background-color: #E13737;"><H6 class="text-center">0</H6></span>
+                            <span class='picker1' id='1'></span>
+                            <span class='picker1' id='2'></span>
+                            <span class='picker1' id='3'></span>
+                            <span class='picker1' id='4'></span>
+                            <span class='picker1' id='5'><H6 class="text-center">MAX</H6></span>
+                            <h5 id='rating'>Rating</h5>
+                            </div>    
+                            
+                            <div class="range">
+                                <h5 id='IMDB2'>IMDB</h5>
+                                <span class='picker2' id='-5'><H6 class="text-center">MAX</H6></span>
+                                <span class='picker2' id='-4'></span>
+                                <span class='picker2' id='-3'></span>
+                                <span class='picker2' id='-2'></span>
+                                <span class='picker2' id='-1'></span>
+                                <span class='picker2' id='0' style="background-color: #E13737;"><H6 class="text-center">0</H6></span>
+                                <span class='picker2' id='1'></span>
+                                <span class='picker2' id='2'></span>
+                                <span class='picker2' id='3'></span>
+                                <span class='picker2' id='4'></span>
+                                <span class='picker2' id='5'><H6 class="text-center">MAX</H6></span>
+                                <h5 id='language'>Language</h5>
+                                </div>    
                             </div>
-                            <div class="col-10">
-                                <div id="sliderContainer">
-                                    <div class="tick-slider">
-                                        <div class="tick-slider-value-container">
-                                            <div id="weightLabelMin" class="tick-slider-label">MAX</div>
-                                            <div id="weightLabelMax" class="tick-slider-label">MAX</div>
-                                            <div id="weightValue" class="tick-slider-value"></div>
-                                        </div>
-                                        <div class="tick-slider-background"></div>
-                                        <div id="weightProgress" class="tick-slider-progress"></div>
-                                        <div id="weightTicks" class="tick-slider-tick-container"></div>
-                                        <input id="weightSlider" class="tick-slider-input" type="range" min="0" max="40"
-                                            step="5" value="9" data-tick-step="5" data-tick-id="weightTicks"
-                                            data-value-id="weightValue" data-progress-id="weightProgress"
-                                            data-handle-size="18" data-min-label-id="weightLabelMin"
-                                            data-max-label-id="weightLabelMax" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-1">
-                                <h5>Rating</h5>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="col-2">
                     <button class='button-next' id='next2'>Next</button>
