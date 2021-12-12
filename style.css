@@ -9,8 +9,8 @@ body{
     background: linear-gradient(180deg, #E7C940 0%, #F3D548 100%, #F3D548 100%);
 }
 #first img{
-    margin-top: 14%;
-    max-width: 55%;
+    margin-top: 10vh;
+    max-width: 60vh;
     max-height: max-content;
 }
 #second{
