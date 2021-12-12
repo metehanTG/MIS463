@@ -120,64 +120,21 @@ back2button.addEventListener('click', function () {
     });
 })
 
-function init() {
-    const sliders = document.getElementsByClassName("tick-slider-input");
-
-    for (let slider of sliders) {
-        slider.oninput = onSliderInput;
-
-        updateValue(slider);
-        updateValuePosition(slider);
-
-        setTicks(slider);
+pickers = document.querySelectorAll('.picker1')
+pickers2 = document.querySelectorAll('.picker2')
+document.addEventListener('click', function(e){
+    if(e.target.className == 'picker1'){
+            for(i = 0; i<=10; i++){
+                console.log(pickers[i])
+                pickers[i].style.backgroundColor = '#999'
+            }
+    e.target.style.backgroundColor = '#E13737';
     }
+    if(e.target.className == 'picker2'){
+        for(i = 0; i<=10; i++){
+            console.log(pickers[i])
+            pickers2[i].style.backgroundColor = '#999'
+        }
+e.target.style.backgroundColor = '#E13737';
 }
-
-function onSliderInput(event) {
-    updateValue(event.target);
-    updateValuePosition(event.target);
-    updateLabels(event.target);
-    updateProgress(event.target);
-}
-
-
-function updateValuePosition(slider) {
-    let value = document.getElementById(slider.dataset.valueId);
-    const percent = getSliderPercent(slider);
-
-    const sliderWidth = slider.getBoundingClientRect().width;
-    const valueWidth = value.getBoundingClientRect().width;
-    const handleSize = slider.dataset.handleSize;
-
-    let left = percent * (sliderWidth - handleSize) + handleSize / 2 - valueWidth / 2;
-
-    left = Math.min(left, sliderWidth - valueWidth);
-    left = slider.value === slider.min ? 0 : left;
-
-    value.style.left = left + "px";
-}
-
-function setTicks(slider) {
-    let container = document.getElementById(slider.dataset.tickId);
-    const spacing = parseFloat(slider.dataset.tickStep);
-    const sliderRange = slider.max - slider.min;
-    const tickCount = sliderRange / spacing + 1; // +1 to account for 0
-
-    for (let ii = 0; ii < tickCount; ii++) {
-        let tick = document.createElement("span");
-
-        tick.className = "tick-slider-tick";
-
-        container.appendChild(tick);
-    }
-}
-
-function onResize() {
-    const sliders = document.getElementsByClassName("tick-slider-input");
-    for (let slider of sliders) {
-        updateValuePosition(slider);
-    }
-}
-
-window.onload = init;
-window.addEventListener("resize", onResize);    
+})
